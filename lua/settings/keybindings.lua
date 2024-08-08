@@ -1,9 +1,6 @@
--- require "helpers/globals"
-require "helpers/keyboard"
-
 local wk = require("which-key")
 
--- Global {{{
+-- Global 
 wk.register({
   ["K"] = {"<cmd>lua vim.lsp.buf.hover()<cr>", "Hover information"},
   ["<leader>o"] = {"<cmd>Telescope find_files<cr>", "Find files"},
@@ -12,9 +9,9 @@ wk.register({
   ["gd"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", "Go to declaration" },
   ["gr"] = {"<cmd>Telescope lsp_references<cr>", "Go to references"},
 })
--- }}}
 
--- LSP {{{
+
+-- LSP 
 wk.register({
   l = {
     name = "LSP",
@@ -22,9 +19,9 @@ wk.register({
       ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
   }
 }, { prefix = "<leader>" })
- -- }}}
+ 
 
--- Telescope {{{
+-- Telescope 
 wk.register({
   t = {
     name = "Telescope",
@@ -43,13 +40,13 @@ wk.register({
     }
   }
 }, { prefix = "<leader>"})
--- }}}
 
--- Trouble {{{
+
+-- Trouble 
 wk.register({
   ["<leader>x"] = {"<cmd>Trouble diagnostics toggle<cr>", "Toggle trouble" },
 })
--- }}}
+
 
 
 

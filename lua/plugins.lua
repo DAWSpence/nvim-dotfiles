@@ -1,14 +1,15 @@
---[[
-  File: plugins.lua
-  Description: This file needed for loading plugin list into lazy.nvim and loading plugins
-  Info: Use <zo> and <zc> to open and close foldings
-  See: https://github.com/folke/lazy.nvim
-]]
-
--- require "helpers/globals"
-
 return {
-  -- Mason {{{
+
+  --Catppuccin  
+  {
+    "catppuccin/nvim", 
+    name = "catppuccin",
+    config = function()
+        require("config-nvim.catppuccin")
+    end
+  },
+
+  -- Mason  
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
@@ -17,12 +18,11 @@ return {
       "neovim/nvim-lspconfig",
     },
     config = function()
-      require "extensions.mason"
+      require "config-nvim.mason"
     end
   },
-  -- }}}
 
--- Which key {{{
+-- Which key  
 {
   "folke/which-key.nvim",
     event = "VeryLazy",
@@ -32,24 +32,8 @@ return {
       vim.o.timeoutlen = 300
     end,
 },
--- }}}
 
-  -- Neo Tree {{{
-  -- Uncomment it if you wish, but don't forget to comment mini.files in extensions/mini.lua
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v3.x",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   config = function ()
-  --     require "extensions.neotree"
-  --   end
-  -- },
-  -- }}}
-
-  -- Telescope {{{
+  -- Telescope  
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -59,12 +43,11 @@ return {
       "ahmedkhalf/project.nvim",
     },
     config = function()
-      require "extensions.telescope"
+      require "config-nvim.telescope"
     end
   },
-  -- }}}
 
-  -- CMP {{{
+  -- CMP  
   {
     'hrsh7th/nvim-cmp',
     event = "InsertEnter",
@@ -79,82 +62,48 @@ return {
       'rafamadriz/friendly-snippets',
     },
     config = function()
-      require "extensions.cmp"
+      require "config-nvim.cmp"
     end
   },
-  -- }}}
 
-  -- LSP Kind {{{
+  -- LSP Kind  
   {
     'onsails/lspkind-nvim',
     lazy = true,
     config = function()
-      require "extensions.lspkind"
+      require "config-nvim.lspkind"
     end
   },
-  -- }}}
 
-  -- Git Signs{{{
+  -- Git Signs 
   {
     'lewis6991/gitsigns.nvim',
     lazy = false,
     config = function()
-      require "extensions.gitsigns"
+      require "config-nvim.gitsigns"
     end
   },
-  -- }}}
 
-  -- Trouble {{{
-  {
-    "folke/trouble.nvim",
-    dependencies = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require "extensions.trouble"
-    end,
-  },
-  -- }}}
 
-  -- TreeSitter {{{
+  -- TreeSitter  
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
-      require "extensions.treesitter"
+      require "config-nvim.treesitter"
     end
   },
-  -- }}}
 
-  -- Theme: cat {{{
-  { 
-    "catppuccin/nvim", 
-    name = "catppuccin",
-    config = function()
-        require("extensions.catppuccin")
-    end
-  },  
-
--- plugins/hardline.lua:
-
-{
-  'ojroques/nvim-hardline',
-  config = function()
-      require("extensions.nvim-hardline")
-  end
-  },
-
-  -- }}}
-
-  -- Mini.nvim {{{
+  -- Mini.nvim  
   {
     'echasnovski/mini.nvim',
     version = false,
     config = function ()
-      require("extensions.mini")
+      require("config-nvim.mini")
     end
   },
-  -- }}}
 
 }
 

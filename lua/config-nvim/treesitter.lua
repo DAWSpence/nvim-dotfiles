@@ -8,6 +8,9 @@ require'nvim-treesitter.configs'.setup {
   -- Needed parsers
   ensure_installed = {
     "lua",
+    'vimdoc',
+    'vim',
+    'markdown',
   },
 
   -- Install all parsers synchronously

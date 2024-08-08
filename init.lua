@@ -4,11 +4,11 @@ require ("helpers/globals")
 --Keybinding functions
 require ('helpers/keyboard')
 
+-- General settings
+require ("settings/general")
+
 -- Bootsraping plugin manager
 require ("lazy-bootstrap")
-
--- Settings
-require ("settings")
 
 -- Plugin management 
 require("lazy").setup({
@@ -17,6 +17,6 @@ require("lazy").setup({
 })
 
 -- Keybindings
-require ("keybindings")
+require ("settings/keybindings")
 
 -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0
