@@ -1,24 +1,8 @@
---[[
-  File: mini.lua
-  Description: mini.nvim plugins configuration
-  See: https://github.com/echasnovski/mini.nvim?tab=readme-ov-file
-]]
-
-local wk = require("which-key")
-
-
--- Files {{{
--- See: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md
-require('mini.files').setup()
-wk.register({
-  ["<leader>v"] = { "<cmd>lua MiniFiles.open()<cr>", "Show file explorer" }
-})
--- }}}
-
 -- Comments
--- See: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md
 require('mini.comment').setup()
 
--- Autopairs
--- See: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
-require('mini.pairs').setup()
+--Enclosing characters
+require('mini.surround').setup()
+
+--Basic jumping
+require('mini.jump').setup()
