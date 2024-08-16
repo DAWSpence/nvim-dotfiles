@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
+vim.g.maplocalleader = ' '
+
 --Gloabl aliases
 require ("helpers/globals")
 
