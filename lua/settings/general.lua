@@ -21,7 +21,7 @@ opt.smartindent = true
 opt.clipboard = 'unnamedplus'
 opt.fixeol = false
 
-opt.foldmethod = 'syntax'
+opt.foldmethod = 'manaul'
 
 opt.ignorecase = true
 opt.joinspaces = false
