@@ -11,6 +11,7 @@ require'nvim-treesitter.configs'.setup {
     'vimdoc',
     'vim',
     'markdown',
+    'make'
   },
 
   -- Install all parsers synchronously
