@@ -7,7 +7,8 @@ opt = vim.opt; -- Vim optionals
 
 
 --source external vim plugin configs
-vim_source=function (file_name)
-    cmd('source ../config-vim/' .. file_name)
+vim_source=function(file_name)
+    local source=os.getenv("PWD") .. '/config-vim/'
+    cmd('source' .. source .. file_name)
 end
 

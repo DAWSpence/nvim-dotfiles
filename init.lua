@@ -1,5 +1,7 @@
-vim.g.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
-vim.g.maplocalleader = ' '
+--Map leaders
+vim.g.mapleader=''
+
+vim.g.maplocalleader=' '
 
 --Gloabl aliases
 require ("helpers/globals")
@@ -15,7 +17,7 @@ require ("lazy-bootstrap")
 
 -- Plugin management 
 require("lazy").setup({
-  require("plugins"),
+  require("plugins-nvim"),
   require("plugins-vim")
 })
 

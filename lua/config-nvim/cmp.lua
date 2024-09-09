@@ -1,19 +1,6 @@
---[[
-  File: cmp.lua
-  Description: CMP plugin configuration (with lspconfig)
-  See: https://github.com/hrsh7th/nvim-cmp
-]]
-
 local cmp = require('cmp')
-local lspkind = require('lspkind')
 
 cmp.setup{
-  snippet = {
-    expand = function(args)
-      require'luasnip'.lsp_expand(args.body) -- Luasnip expand
-    end,
-  },
-
   -- Mappings for cmp
   mapping = {
 
@@ -40,14 +27,7 @@ cmp.setup{
     { name = 'luasnip' },                 -- Luasnip
     { name = 'buffer' },                  -- Buffers
     { name = 'path' },                    -- Paths
-  }, {
   }),
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol', -- Show only symbol annotations
-      maxwidth = 50,   -- Prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-    })
-  }
 }
 
 -- Add snippets from Friendly Snippets

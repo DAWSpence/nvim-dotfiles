@@ -9,14 +9,13 @@ cmd[[autocmd VimResized * wincmd =]]
 
 
 --Base settings
-vim.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
-vim.maplocalleader = ' '
 
 opt.termguicolors=true
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smartindent = true
+opt.laststatus=2
 
 opt.clipboard = 'unnamedplus'
 opt.fixeol = false
@@ -42,7 +41,7 @@ opt.scrolloff = 100
 opt.timeoutlen = 300
 opt.updatetime = 250
 opt.signcolumn = 'yes'
-opt.showmode = false
+opt.showmode = true
 opt.breakindent = true
 
 opt.inccommand = 'split'
@@ -58,15 +57,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
       vim.highlight.on_yank()
     end,
   })
-
-
-
-
-
-
-
-
-
-
-
 -- vim: tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=1
