@@ -26,7 +26,9 @@ return {
 {
   "folke/which-key.nvim",
     event = "VeryLazy",
-    config = true,
+    config = function()
+      require("config-nvim.which-key")
+    end,
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
