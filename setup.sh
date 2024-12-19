@@ -29,7 +29,7 @@ clean_data_dirs(){
 setup(){
     echo '====SETTING UP NEOVIM===='
     echo
-    cp -rvu ./neovim-config/* $XDG_CONFIG_HOME
+    cp -rvu ./neovim-config/* $XDG_CONFIG_HOME/nvim
     echo
     echo "The config directory is
           $XDG_CONFIG_HOME
