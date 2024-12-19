@@ -16,7 +16,7 @@ finstructions(){
 clean_config(){
     echo '====CLEANING CONFIG DIRECTORY FILES===='
     echo
-    rm -rfv $XDG_CONFIG_HOME/nvim/*
+    rm -rfv $XDG_CONFIG_HOME/nvim/* $XDG_CONFIG_HOME/nvim/.*
 }
 
 clean_data_dirs(){
@@ -65,6 +65,8 @@ case $@ in
       ;;
 
   '-a')
+      clean_config
+      clean_data_dirs
       setup
       ;;
 
