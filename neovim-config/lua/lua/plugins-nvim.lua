@@ -67,24 +67,6 @@ return {
   },
 
 
-
-
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    lazy=false,
-    dependencies = { 
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim" },
-    config=function()
-      require('plugins.telescope-file-browser')
-    end,
-
-  },
-
-
-
-
-
   
   -- CMP  
   {
@@ -156,30 +138,30 @@ return {
   },
 
 
---   {
---    "nvim-tree/nvim-tree.lua",
---     version = "*",
---     lazy = false,
---     dependencies = {
---       "nvim-tree/nvim-web-devicons",
---     },
+  {
+   "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
 
---     config = function()
---         vim.g.loaded_netrw = 1
---         vim.g.loaded_netrwPlugin = 1
---         require("plugins.nvim-tree")
---     end,
--- },
+    config = function()
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+        require("plugins.nvim-tree")
+    end,
+},
 
 
 {
   "romgrk/barbar.nvim",
   version='^1.0.0',
   lazy=false,
-  dependencies={
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-  },
+  -- dependencies={
+  --     'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+  --     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  -- },
   config=function()
     require ('plugins.barbar')
   end,

@@ -45,7 +45,6 @@ wk.add({
     {'<leader>l', group='LSP'},
     {'<leader>lr','<cmd>lua vim.lsp.buf.rename()<CR>', desc= "Rename symbol"},
     {'<leader>la','<cmd>lua vim.lsp.buf.code_action()<CR>', desc= "Code action"},
-    {'<leader>e',':Telescope file_browser<CR>',group='File Explorer',mode='n'},
 })
 
 wk.add({

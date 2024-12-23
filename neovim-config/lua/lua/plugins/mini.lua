@@ -6,6 +6,9 @@ require('mini.surround').setup()
 --Basic jumping
 require('mini.jump').setup()
 
+--Basic startup
+require('mini.starter').setup()
+
 --Basic autopairs
 require('mini.pairs').setup()
 

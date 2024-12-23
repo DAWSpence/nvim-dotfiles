@@ -1,3 +1,8 @@
+--[[
+  File: treesitter.lua
+  Description: Configuration of tree-sitter
+  See: https://github.com/tree-sitter/tree-sitter
+]]
 require'nvim-treesitter.configs'.setup {
 
   -- Needed parsers
