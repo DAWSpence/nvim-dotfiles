@@ -16,6 +16,4 @@ require("nvim-tree").setup {
         dotfiles = true,
         },
 
-    vim.keymap.set('n', '<leader>s', require("nvim-tree.api").tree.toggle,{silent=true})
-
 }

@@ -39,13 +39,17 @@ wk.setup{
 }
 
 
+
+
+
+
 --Global
 wk.add({
-
-    {'<leader>l', group='LSP'},
-    {'<leader>lr','<cmd>lua vim.lsp.buf.rename()<CR>', desc= "Rename symbol"},
-    {'<leader>la','<cmd>lua vim.lsp.buf.code_action()<CR>', desc= "Code action"},
-    {'<leader>e',':Telescope file_browser<CR>',group='File Explorer',mode='n'},
+    {'<leader>e',group='File Explorer',mode='n'},
+    {'<leader>ee','<cmd>NvimTreeToggle<cr>',desc='Toggle explorer',mode='n'},
+    {'<leader>ef','<cmd>NvimTreeFindFileToggle<cr>',desc='Toggle explorer on cursor',mode='n'},
+    {'<leader>ec','<cmd>NvimTreeCollapse<cr>',desc='Collapse file explorer',mode='n'},
+    {'<leader>er','<cmd>NvimTreeRefresh<cr>',desc='Refresh file explorer',mode='n'},
 })
 
 wk.add({

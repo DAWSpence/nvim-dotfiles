@@ -14,7 +14,4 @@ require("toggleterm").setup{
         border='single',
         title_pos='center'
     }
-
-
-
 }
