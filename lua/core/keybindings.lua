@@ -1,4 +1,8 @@
---BASIC KEYBINDINGS--
+-- ====================================================================
+--BASIC KEYBINDINGS
+-- ====================================================================
+
+
 
 --Better defaults
 vim.keymap.set('n','<Esc>','<cmd>nohlsearch<CR>', {noremap=true, silent=true})
@@ -26,6 +30,9 @@ vim.keymap.set('n','<C-j>','<C-w>j', {noremap=true, silent=true})
                                    
 vim.keymap.set('n','<C-k>','<C-w>k', {noremap=true, silent=true})
 
+vim.keymap.set('n','<S-v>','<cmd>vsplit<cr>', {noremap=true, silent=true})
+                                   
+vim.keymap.set('n','<S-s>','<cmd>split<cr>', {noremap=true, silent=true})
 
 
 
@@ -47,6 +54,15 @@ vim.keymap.set('n','<Down>','<C-o>gj', {noremap=true, silent=true})
 
 vim.keymap.set('n','<Up>','<C-o>gk', {noremap=true, silent=true})
 
+vim.keymap.set('n','<leader>q',':q<CR>', {noremap=true, silent=true})
+
+vim.keymap.set('n','<leader>Q',':q!<CR>', {noremap=true, silent=true})
+
+vim.keymap.set('n','<leader>w',':w<CR>', {noremap=true, silent=true})
+
+vim.keymap.set('n','<leader>wq',':wq<CR>', {noremap=true, silent=true})
+
+
 
 
 -- Wrapped line movement
@@ -56,6 +72,11 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 --Cursor at bottom of visual select
 vim.keymap.set('v','y','ygv<Esc>', {noremap=true, silent=true})
+
+
+
+
+
 
 
 -- -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0

@@ -16,13 +16,14 @@ else
 
   require("core.general")
 
-  require('core.keybindings')
-
   require("lazy-bootstrap")
 
   require("lazy").setup({
     require("plugins-nvim"),
   })
+
+  require('core.keybindings')
+
 
 
   -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0

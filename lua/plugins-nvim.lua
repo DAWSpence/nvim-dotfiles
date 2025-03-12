@@ -1,16 +1,15 @@
 return {
   --Gruvbox material
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
+
+
+  { "ellisonleao/gruvbox.nvim",
     priority = 1000,
-    config = function()
-      require('gruvbox-material').setup()
-      vim.g.gruvbox_material_enable_italic = true
-      vim.o.background = "dark" -- or "light" for light mode
-      vim.cmd.colorscheme('gruvbox-material')
+    config = true,
+    config=function()
+       require("plugins.gruvbox")
     end,
   },
+
 
 
 
@@ -96,11 +95,6 @@ return {
     version='v2.*',
     build='make install_jsregexp',
     event='InsertEnter',
-    config=function()
-      require('luasnip.loaders.from_lua').lazy_load
-    
-    end
-
   },
 
 
@@ -151,6 +145,15 @@ return {
 
       --Basic align
       require('mini.align').setup()
+
+      --Basic motions
+      require('mini.jump2d').setup({
+
+        mappings = {
+          start_jumping = '<leader>f',
+          },
+
+    })
     end,
   },
 
@@ -261,7 +264,7 @@ return {
     require('bufmode').setup {
       enter_mapping = false,
       bufferline=false,
-      barbar=false
+      barbar=false,
     }
   end,
 
@@ -287,6 +290,7 @@ return {
   }
   end,
   dependencies = {'Iron-E/nvim-libmodal'},
+
 },
 
 
@@ -294,32 +298,30 @@ return {
 -- Custom modes
 {
   'Iron-E/nvim-libmodal',
-  lazy = false, -- don't load until necessary
-  config=function()
-    require('plugins.modes')
-  end
+  lazy = true, -- don't load until necessary
+
 },
 
 
 
 
 -- Latex plugin
-{
-  'lervag/vimtex',
-  lazy=false
-},
+--{
+--  'lervag/vimtex',
+--  lazy=false
+--},
 
 
 
 --Latex completion
-{
-  'micangl/cmp-vimtex',
-  lazy=false,
-  config=function()
-    require('plugins.cmptex')
-  end
-   
-}
+--{
+--  'micangl/cmp-vimtex',
+--  lazy=false,
+--  config=function()
+--    require('plugins.cmptex')
+--  end
+--   
+--}
 
 
 }
