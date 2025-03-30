@@ -235,63 +235,52 @@ return {
     })
 
 
-    -- Keybindings
-    -- Moving between buffers
-    map('n','<S-h>','<cmd>BufferPrevious<CR>',default)
-    map('n','<S-l>','<cmd>BufferNext<CR>',default)
-
-    -- Shifting buffers around
-    map('n','<S-n>','<cmd>BufferMovePrevious<CR>',default)
-    map('n','<S-m>','<cmd>BufferMoveNext<CR>',default)
-
-    --kill the buffer
-    map('n','<S-q>','<cmd>BufferClose<CR>',default)
-
   end,
+
 },
 
 
 
 
 
--- Buffer mode
+-- -- Buffer mode
 
-{
-  'Iron-E/nvim-bufmode',
-  cmd = 'BufmodeEnter', -- don't load until using this command
+-- {
+--   'Iron-E/nvim-bufmode',
+--   cmd = 'BufmodeEnter', -- don't load until using this command
 
-  config = function() 
-    require('bufmode').setup {
-      enter_mapping = false,
-      bufferline=false,
-      barbar=false,
-    }
-  end,
+--   config = function() 
+--     require('bufmode').setup {
+--       enter_mapping = false,
+--       bufferline=false,
+--       barbar=false,
+--     }
+--   end,
 
-  dependencies = {
-    'Iron-E/nvim-libmodal',
-    'romgrk/barbar.nvim',
-  },
-},
-
-
+--   dependencies = {
+--     'Iron-E/nvim-libmodal',
+--     'romgrk/barbar.nvim',
+--   },
+-- },
 
 
--- Tab mode
-{
-  'Iron-E/nvim-tabmode',
-  cmd = 'TabmodeEnter', 
 
-  config = function()
-    require('tabmode').setup {
-    enter_mapping = false,
-    bufferline = false, -- add bufferline.nvim keymaps
-    barbar = false -- add barbar.nvim keymaps
-  }
-  end,
-  dependencies = {'Iron-E/nvim-libmodal'},
 
-},
+-- -- Tab mode
+-- {
+--   'Iron-E/nvim-tabmode',
+--   cmd = 'TabmodeEnter', 
+
+--   config = function()
+--     require('tabmode').setup {
+--     enter_mapping = false,
+--     bufferline = false, -- add bufferline.nvim keymaps
+--     barbar = false -- add barbar.nvim keymaps
+--   }
+--   end,
+--   dependencies = {'Iron-E/nvim-libmodal'},
+
+-- },
 
 
 

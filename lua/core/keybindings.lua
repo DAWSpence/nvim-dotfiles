@@ -3,6 +3,7 @@
 -- ====================================================================
 
 
+local api = require('nvim-tree.api')
 
 --Better defaults
 vim.keymap.set('n','<Esc>','<cmd>nohlsearch<CR>', {noremap=true, silent=true})
@@ -36,6 +37,36 @@ vim.keymap.set('n','<S-s>','<cmd>split<cr>', {noremap=true, silent=true})
 
 
 
+-- Moving between buffers
+vim.keymap.set('n','<S-h>','<cmd>:BufferPrevious<CR>',{noremap=true, silent=true})
+vim.keymap.set('n','<S-l>','<cmd>:BufferNext<CR>',{noremap=true, silent=true})
+
+-- Shifting buffers around
+vim.keymap.set('n','<S-n>','<cmd>:BufferMovePrevious<CR>',{noremap=true, silent=true})
+vim.keymap.set('n','<S-m>','<cmd>:BufferMoveNext<CR>',{noremap=true, silent=true})
+
+--kill the buffer
+vim.keymap.set('n','<S-q>','<cmd>:BufferClose<CR>',{noremap=true, silent=true})
+
+
+
+--window resize
+vim.keymap.set('n','K','<C-W>+<CR>',{noremap=true, silent=true})
+vim.keymap.set('n','J','<C-W>-<CR>',{noremap=true, silent=true})
+vim.keymap.set('n','H','<C-W><<CR>',{noremap=true, silent=true})
+vim.keymap.set('n','L','<C-W>><CR>',{noremap=true, silent=true})
+
+
+
+
+
+
+
+
+--Window swap rebind
+vim.keymap.set('n','<C-n>','<C-w>R',{noremap=true, silent=true})
+vim.keymap.set('n','<C-m>','<C-w>r',{noremap=true, silent=true})
+vim.keymap.set('n','<C-e>', function () api.tree.toggle({path=os.getenv('PWD')}) end, {noremap=true, silent=true})
 
 
 
