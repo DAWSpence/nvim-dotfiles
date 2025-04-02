@@ -50,6 +50,7 @@ vim.keymap.set('n','<S-q>','<cmd>:BufferClose<CR>',{noremap=true, silent=true})
 
 
 
+
 --window resize
 vim.keymap.set('n','K','<C-W>+<CR>',{noremap=true, silent=true})
 vim.keymap.set('n','J','<C-W>-<CR>',{noremap=true, silent=true})
@@ -86,6 +87,8 @@ vim.keymap.set('n','<Down>','<C-o>gj', {noremap=true, silent=true})
 vim.keymap.set('n','<Up>','<C-o>gk', {noremap=true, silent=true})
 
 vim.keymap.set('n','<leader>q',':q<CR>', {noremap=true, silent=true})
+
+vim.keymap.set('n','<C-q>',':q!<CR>', {noremap=true, silent=true})
 
 vim.keymap.set('n','<leader>Q',':q!<CR>', {noremap=true, silent=true})
 
