@@ -51,19 +51,6 @@ vim.keymap.set('n','<S-q>','<cmd>:BufferClose<CR>',{noremap=true, silent=true})
 
 
 
---window resize
-vim.keymap.set('n','K','<C-W>+<CR>',{noremap=true, silent=true})
-vim.keymap.set('n','J','<C-W>-<CR>',{noremap=true, silent=true})
-vim.keymap.set('n','H','<C-W><<CR>',{noremap=true, silent=true})
-vim.keymap.set('n','L','<C-W>><CR>',{noremap=true, silent=true})
-
-
-
-
-
-
-
-
 --Window swap rebind
 vim.keymap.set('n','<C-n>','<C-w>R',{noremap=true, silent=true})
 vim.keymap.set('n','<C-m>','<C-w>r',{noremap=true, silent=true})
