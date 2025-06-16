@@ -1,54 +1,61 @@
-local cmp = require('cmp')
-local luasnip=require('luasnip')
-require("luasnip/loaders/from_vscode").lazy_load()
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 
+require("luasnip.loaders.from_vscode").lazy_load()
 
-cmp.setup{
-  -- Mappings for cmp
-  completion={
-    completeopt="menu,menuone,preview,noselect",
+cmp.setup({
+  completion = {
+    completeopt = "menu,menuone,preview,noselect",
   },
+  -- configure how nvim-cmp interacts with snippet engine
 
-  snippet={
-    expand=function(args)
+  snippet = { 
+    expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
   },
-
-
-  mapping = {
-
-    -- Autocompletion menu
-    ['<S-j>'] = cmp.mapping.select_next_item(),
-    ['<S-k>'] = cmp.mapping.select_prev_item(),
-
-    -- Use <C-p> and <C-n> to navigate through completion variants
-    ['<S-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-    ['<S-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-
-
-    -- Use <C-e> to abort autocomplete
-    ['<S-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(), -- Abort completion
-      c = cmp.mapping.close(), -- Close completion window
-    }),
-
-
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i' }),
-    ['<S-y>'] = cmp.mapping.confirm({ select = true }), -- Turn on autocomplete on <C-y>
-    ['<CR>'] = cmp.config.disable, -- Turn off autocomplete on <CR>
-
+  window={
+    completion=cmp.config.window.bordered(),
+    documentation=cmp.config.window.bordered(),
   },
 
-  sources = cmp.config.sources({
-    { name = 'path' },                    -- Paths
-    { name = 'buffer' },                  -- Buffers
-    { name = 'nvim_lsp' },                -- LSP
-    { name = 'luasnip' },                 -- Luasnip
-    { name = 'nvim_lsp_signature_help' }, -- LSP for parameters in functions
-    { name = 'nvim_lua' },                -- Lua Neovim API
-
+  mapping = cmp.mapping.preset.insert({
+    ["<C-n>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+    ["<C-p>"] = cmp.mapping.select_next_item(), -- next suggestion
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
   }),
-}
 
+  -- sources for autocompletion
+  sources = cmp.config.sources({
+    { name = "nvim_lsp"},
+    { name = "luasnip" }, -- snippets
+    { name = "buffer" }, -- text within current buffer
+    { name = "path" }, -- file system paths
+  }),
 
+  -- configure lspkind for vs-code like pictograms in completion menu
+  formatting = {
+    fields = { 'kind', 'abbr', 'menu' },
+
+    format = function(entry, vim_item)
+
+      vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
+      vim_item.menu = ({
+
+        nvim_lsp = '[LSP]',
+        luasnip = '[Snippet]',
+        buffer = '[Buffer]',
+        path = '[Path]',
+
+      })[entry.source.name]
+
+      return vim_item
+    end,
+  },
+
+})
